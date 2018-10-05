@@ -7,10 +7,10 @@ import bos.RelativeMove;
 
 public class Stage extends KeyObservable {
     protected Grid grid;
-    protected Character sheep;
+    public Character sheep;
     protected Character shepherd;
     protected Character wolf;
-    private List<Character> allCharacters;
+    public List<Character> allCharacters;
     protected Player player;
 
     private Instant timeOfLastMove = Instant.now();
@@ -56,5 +56,33 @@ public class Stage extends KeyObservable {
         shepherd.paint(g);
         wolf.paint(g);
         player.paint(g);
+    }
+
+}
+class Originator{
+
+    private static Cell article;
+    // Sets the value for the article
+
+    public static void set(Cell newArticle) {
+
+        System.out.println("From Originator: Current Version of Article\n"+newArticle+ "\n");
+        article = newArticle;
+    }
+
+    // Creates a new Memento with a new article
+
+    public static Memento storeInMemento() {
+
+        System.out.println("From Originator: Saving to Memento");
+        return new Memento(article);
+    }
+    // Gets the article currently stored in memento
+
+    public Cell restoreFromMemento(Memento memento) {
+
+        article = memento.getSavedArticle();
+        System.out.println("From Originator: Previous Article Saved in Memento\n"+article + "\n");
+        return article;
     }
 }

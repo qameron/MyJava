@@ -39,6 +39,8 @@ public class Player implements KeyObserver {
             } else if (c == 's') {
                 location = gb.below(location).orElse(location);
                 inMove = false;
+            } else if (c == ' ') {
+
             }
 
         }

@@ -32,6 +32,7 @@ public abstract class Character implements GamePiece<Cell> {
 
     public Cell getLocationOf(){
         return this.location;
+
     }
 
     public void setBehaviour(Behaviour behaviour){
