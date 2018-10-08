@@ -28,7 +28,7 @@ public class Main extends JFrame implements Runnable {
         @Override
         public void keyTyped(KeyEvent e) {
             stage.notifyAll(e.getKeyChar(), stage.grid);
-
+            stage.update();
             /////////////////////////////////////////////
          //   Originator originator = new Originator();
          //   originator.set(new Cell(stage.player.location.x,stage.player.location.y));
@@ -40,8 +40,9 @@ public class Main extends JFrame implements Runnable {
 
         @Override
         public void keyPressed(KeyEvent e) {
+          //  stage.notifyAll(e.getKeyChar(), stage.grid);
             /////////////////////////////////////////////
-            if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+        /**    if(e.getKeyCode() == KeyEvent.VK_SPACE) {
                 Originator originator = new Originator();
                 originator.set(new Cell(stage.player.location.x, stage.player.location.y));
 
@@ -51,10 +52,10 @@ public class Main extends JFrame implements Runnable {
             if(e.getKeyCode() == KeyEvent.VK_R) {
                 Originator originator = new Originator();
                 stage.player.location = originator.restoreFromMemento(Caretaker.getMemento(0));
-
+**/
             }
             /////////////////////////////////////////////
-        }
+
 
         @Override
         public void keyReleased(KeyEvent e) {}

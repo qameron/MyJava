@@ -24,11 +24,12 @@ public class Player implements KeyObserver {
     public Boolean inMove(){
         return inMove;
     }
-
+    Originator originator = new Originator();
     public void notify(char c, GameBoard<Cell> gb) {
         if (inMove){
             if (c == 'a') {
                 location = gb.leftOf(location).orElse(location);
+                //Stage.player.location = gb.leftOf(location).orElse(location);
                 inMove = false;
             } else if (c == 'd') {
                 location = gb.rightOf(location).orElse(location);
@@ -40,6 +41,18 @@ public class Player implements KeyObserver {
                 location = gb.below(location).orElse(location);
                 inMove = false;
             } else if (c == ' ') {
+               // Originator originator = new Originator();
+                originator.set(new Cell(Stage.wolf.location.x, Stage.wolf.location.y));
+
+                Caretaker caretaker = new Caretaker();
+                caretaker.addMemento(originator.storeInMemento());
+                inMove = true;
+            } else if (c == 'r') {
+             //   Originator originator = new Originator();
+                Stage.wolf.location = originator.restoreFromMemento(Caretaker.getMemento(0));
+              //  System.out.println("test repeating r");
+               // Stage.update();
+                inMove = true;
 
             }
 

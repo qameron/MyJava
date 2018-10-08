@@ -29,7 +29,7 @@ public class SAWReader {
 
     private bos.Pair<Integer,Integer> searchForPair(String target){
         for (String s: contents){
-            Pattern p = Pattern.compile(target + ":\\s*\\((\\d*),\\s*(\\d)\\)");
+            Pattern p = Pattern.compile(target + ":\\s*\\((\\d+),\\s*(\\d+)\\)");
             Matcher m = p.matcher(s);
             if(m.matches()){
                 return new bos.Pair( Integer.parseInt(m.group(1).trim())

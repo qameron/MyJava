@@ -9,9 +9,9 @@ public class Stage extends KeyObservable {
     protected Grid grid;
     public Character sheep;
     protected Character shepherd;
-    protected Character wolf;
+    protected static Character wolf;
     public List<Character> allCharacters;
-    protected Player player;
+    protected static Player player;
 
     private Instant timeOfLastMove = Instant.now();
 
