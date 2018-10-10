@@ -30,7 +30,7 @@ public class Player implements KeyObserver {
             if (c == 'a') {
                 location = gb.leftOf(location).orElse(location);
                 //Stage.player.location = gb.leftOf(location).orElse(location);
-                inMove = false;
+               inMove = false;
             } else if (c == 'd') {
                 location = gb.rightOf(location).orElse(location);
                 inMove = false;
@@ -42,14 +42,14 @@ public class Player implements KeyObserver {
                 inMove = false;
             } else if (c == ' ') {
                // Originator originator = new Originator();
-                originator.set(new Cell(Stage.wolf.location.x, Stage.wolf.location.y));
+                originator.set(new Cell(Stage.player.location.x, Stage.player  .location.y));
 
                 Caretaker caretaker = new Caretaker();
                 caretaker.addMemento(originator.storeInMemento());
                 inMove = true;
             } else if (c == 'r') {
              //   Originator originator = new Originator();
-                Stage.wolf.location = originator.restoreFromMemento(Caretaker.getMemento(0));
+                Stage.player.location = originator.restoreFromMemento(Caretaker.getMemento(0));
               //  System.out.println("test repeating r");
                // Stage.update();
                 inMove = true;

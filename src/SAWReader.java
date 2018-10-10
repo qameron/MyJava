@@ -27,6 +27,10 @@ public class SAWReader {
         return searchForPair("shepherd");
     }
 
+    public bos.Pair<Integer, Integer> getBlockLoc(){
+        return searchForPair("block");
+    }
+
     private bos.Pair<Integer,Integer> searchForPair(String target){
         for (String s: contents){
             Pattern p = Pattern.compile(target + ":\\s*\\((\\d+),\\s*(\\d+)\\)");

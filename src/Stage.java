@@ -12,6 +12,7 @@ public class Stage extends KeyObservable {
     protected static Character wolf;
     public List<Character> allCharacters;
     protected static Player player;
+    public static Block block;
 
     private Instant timeOfLastMove = Instant.now();
 
@@ -21,12 +22,13 @@ public class Stage extends KeyObservable {
         shepherd = new Shepherd(grid.cellAtRowCol(sr.getShepherdLoc().first, sr.getShepherdLoc().second), new StandStill());
         sheep    = new Sheep(grid.cellAtRowCol(sr.getSheepLoc().first, sr.getSheepLoc().second), new MoveTowards(shepherd));
         wolf     = new Wolf(grid.cellAtRowCol(sr.getWolfLoc().first, sr.getWolfLoc().second), new MoveTowards(sheep));
+        block    = new Block(grid.cellAtRowCol(sr.getBlockLoc().first, sr.getBlockLoc().second), new StandStill());
 
         player = new Player(grid.getRandomCell());
         this.register(player);
 
         allCharacters = new ArrayList<Character>();
-        allCharacters.add(sheep); allCharacters.add(shepherd); allCharacters.add(wolf);
+        allCharacters.add(sheep); allCharacters.add(shepherd); allCharacters.add(wolf); //allCharacters.add(block);
 
     }
 
@@ -43,7 +45,11 @@ public class Stage extends KeyObservable {
                     sheep.setBehaviour(new StandStill());
                     shepherd.setBehaviour(new MoveTowards(sheep));
                 }
+               // if (player.location.x )
                 allCharacters.forEach((c) -> c.aiMove(this).perform());
+                /**
+                 * It COULD be this .startMove
+                 */
                 player.startMove();
                 timeOfLastMove = Instant.now();
             }
@@ -56,6 +62,7 @@ public class Stage extends KeyObservable {
         shepherd.paint(g);
         wolf.paint(g);
         player.paint(g);
+        block.paint(g);
     }
 
 }
