@@ -5,7 +5,6 @@ import java.awt.event.*;
 import java.time.Duration;
 import java.time.Instant;
 
-
 public class Main extends JFrame implements Runnable {
 
     private class Canvas extends JPanel implements KeyListener {
@@ -26,36 +25,10 @@ public class Main extends JFrame implements Runnable {
 
 
         @Override
-        public void keyTyped(KeyEvent e) {
-            stage.notifyAll(e.getKeyChar(), stage.grid);
-            stage.update();
-            /////////////////////////////////////////////
-         //   Originator originator = new Originator();
-         //   originator.set(new Cell(stage.player.location.x,stage.player.location.y));
-
-          //  Caretaker caretaker = new Caretaker();
-        //    caretaker.addMemento(originator.storeInMemento());
-            /////////////////////////////////////////////
-        }
+        public void keyTyped(KeyEvent e) {stage.notifyAll(e.getKeyChar(), stage.grid);}
 
         @Override
-        public void keyPressed(KeyEvent e) {
-          //  stage.notifyAll(e.getKeyChar(), stage.grid);
-            /////////////////////////////////////////////
-        /**    if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-                Originator originator = new Originator();
-                originator.set(new Cell(stage.player.location.x, stage.player.location.y));
-
-                Caretaker caretaker = new Caretaker();
-                caretaker.addMemento(originator.storeInMemento());
-            }
-            if(e.getKeyCode() == KeyEvent.VK_R) {
-                Originator originator = new Originator();
-                stage.player.location = originator.restoreFromMemento(Caretaker.getMemento(0));
-**/
-            }
-            /////////////////////////////////////////////
-
+        public void keyPressed(KeyEvent e) {}
 
         @Override
         public void keyReleased(KeyEvent e) {}
@@ -66,9 +39,7 @@ public class Main extends JFrame implements Runnable {
         window.run();
     }
 
-    public Main() {
-
-
+    private Main() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Canvas canvas = new Canvas();
         this.setContentPane(canvas);

@@ -3,36 +3,46 @@ import java.util.*;
 import java.time.*;
 import java.util.List;
 
+import bos.NoMove;
 import bos.RelativeMove;
 
 public class Stage extends KeyObservable {
     protected Grid grid;
-    public Character sheep;
+    protected Character sheep;
     protected Character shepherd;
-    protected static Character wolf;
-    public List<Character> allCharacters;
-    protected static Player player;
-    public static Block block;
+    protected Character wolf;
+    private List<Character> allCharacters;
+    protected Player player;
+    protected Block block;
 
     private Instant timeOfLastMove = Instant.now();
+    private Originator originator;
+    private GameState currentGameState;
 
     public Stage() {
+        originator = new Originator(this);
+        currentGameState = new GameState();
         SAWReader sr = new SAWReader("data/stage1.saw");
-        grid     = new Grid(10, 10);
-        shepherd = new Shepherd(grid.cellAtRowCol(sr.getShepherdLoc().first, sr.getShepherdLoc().second), new StandStill());
-        sheep    = new Sheep(grid.cellAtRowCol(sr.getSheepLoc().first, sr.getSheepLoc().second), new MoveTowards(shepherd));
-        wolf     = new Wolf(grid.cellAtRowCol(sr.getWolfLoc().first, sr.getWolfLoc().second), new MoveTowards(sheep));
-        block    = new Block(grid.cellAtRowCol(sr.getBlockLoc().first, sr.getBlockLoc().second), new StandStill());
+        grid = new Grid(10, 10);
+        shepherd = new Shepherd(grid.cellAtRowCol(sr.getShepherdLoc().first, sr.getShepherdLoc().second), new StandStill(), currentGameState);
+        sheep = new Sheep(grid.cellAtRowCol(sr.getSheepLoc().first, sr.getSheepLoc().second), new MoveTowards(shepherd), currentGameState);
+        wolf = new Wolf(grid.cellAtRowCol(sr.getWolfLoc().first, sr.getWolfLoc().second), new MoveTowards(sheep), currentGameState);
+        block   = new Block(grid.cellAtRowCol(sr.getBlockLoc().first, sr.getBlockLoc().second), new StandStill(), currentGameState);
 
-        player = new Player(grid.getRandomCell());
+        Cell c = grid.getRandomCell();
+
+        player = new Player(c, currentGameState, originator);
+
+        currentGameState.setPlayerLocation(c);
         this.register(player);
 
         allCharacters = new ArrayList<Character>();
-        allCharacters.add(sheep); allCharacters.add(shepherd); allCharacters.add(wolf); //allCharacters.add(block);
-
+        allCharacters.add(sheep);
+        allCharacters.add(shepherd);
+        allCharacters.add(wolf);
     }
 
-    public void update(){
+    public void update() {
         if (!player.inMove()) {
             if (sheep.location == shepherd.location) {
                 System.out.println("The sheep is safe :)");
@@ -45,11 +55,7 @@ public class Stage extends KeyObservable {
                     sheep.setBehaviour(new StandStill());
                     shepherd.setBehaviour(new MoveTowards(sheep));
                 }
-               // if (player.location.x )
                 allCharacters.forEach((c) -> c.aiMove(this).perform());
-                /**
-                 * It COULD be this .startMove
-                 */
                 player.startMove();
                 timeOfLastMove = Instant.now();
             }
@@ -64,32 +70,41 @@ public class Stage extends KeyObservable {
         player.paint(g);
         block.paint(g);
     }
-
 }
-class Originator{
 
-    private static Cell article;
-    // Sets the value for the article
+class Originator {
 
-    public static void set(Cell newArticle) {
+    private GameState currentGameState, savedGameState;
+    private Stage stage;
 
-        System.out.println("From Originator: Current Version of Article\n"+newArticle+ "\n");
-        article = newArticle;
+    public Originator(Stage stage) {
+        this.stage = stage;
     }
 
-    // Creates a new Memento with a new article
-
-    public static Memento storeInMemento() {
-
-        System.out.println("From Originator: Saving to Memento");
-        return new Memento(article);
+    public void setGameState(GameState gameState) {
+        this.currentGameState = gameState;
     }
-    // Gets the article currently stored in memento
 
-    public Cell restoreFromMemento(Memento memento) {
+    public GameState saveToMemento() {
+        System.out.println("The game has been saved");
+        savedGameState = new GameState();
+        savedGameState.setPlayerLocation(currentGameState.getPlayerLocation());
+        savedGameState.setSheepLocation(currentGameState.getSheepLocation());
+        savedGameState.setShephardLocation(currentGameState.getShephardLocation());
+        savedGameState.setWolfLocation(currentGameState.getWolfLocation());
+        return savedGameState;
+    }
 
-        article = memento.getSavedArticle();
-        System.out.println("From Originator: Previous Article Saved in Memento\n"+article + "\n");
-        return article;
+    public void restoreFromMemento() {
+        if (savedGameState == null) {
+            System.out.println("Need to save to memento before restoring.");
+            return;
+        }
+        System.out.println("Restoring from memento.");
+        stage.wolf.setLocationOf(savedGameState.getWolfLocation());
+        stage.sheep.setLocationOf(savedGameState.getSheepLocation());
+        stage.shepherd.setLocationOf(savedGameState.getShephardLocation());
+        stage.player.location = savedGameState.getPlayerLocation();
+        stage.update();
     }
 }

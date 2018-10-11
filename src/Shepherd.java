@@ -4,8 +4,9 @@ import java.util.Optional;
 
 public class Shepherd extends Character {
 
-    public Shepherd(Cell location, Behaviour behaviour) {
-        super(location, behaviour);
+    public Shepherd(Cell location, Behaviour behaviour, GameState gameState) {
+        super(CHARACTERS.SHEPHERD, location, behaviour, gameState);
+        gameState.setShephardLocation(location);
         display = Optional.of(Color.GREEN);
     }
 

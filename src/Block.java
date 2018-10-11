@@ -11,13 +11,21 @@ public class Block implements GamePiece<Cell> {
         Behaviour behaviour;
         public Color BROWN = new Color(102,51,0);
 
-        public Block(Cell location, StandStill standStill){
+        public Block(Cell location, StandStill standStill, GameState gameState){
+            GameState.setBlockLocation(location);
             this.location = location;
             this.behaviour = behaviour;
             this.display = Optional.of(BROWN);
             }
 
-        public  void paint(Graphics g){
+    public Block(Cell cellAtRowCol, StandStill standStill) {
+        GameState.setBlockLocation(location);
+        this.location = location;
+        this.behaviour = behaviour;
+        this.display = Optional.of(BROWN);
+    }
+
+    public  void paint(Graphics g){
             if(display.isPresent()) {
                 g.setColor(display.get());
                 g.fillRect(location.x + location.width, location.y + location.height, location.width, location.height);
@@ -45,7 +53,4 @@ public class Block implements GamePiece<Cell> {
             this.behaviour = behaviour;
         }
 
-      //  public RelativeMove aiMove(Stage stage){
-          //  return behaviour.standStill(stage, this);
-      //  }
 }

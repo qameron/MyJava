@@ -8,11 +8,11 @@ public class SAWReader {
     List<String> contents;
 
     public SAWReader(String filename) {
-         try {
-             contents = java.nio.file.Files.readAllLines(java.nio.file.Paths.get(filename));
-         } catch (IOException e){
-             contents = new ArrayList();
-         }
+        try {
+            contents = java.nio.file.Files.readAllLines(java.nio.file.Paths.get(filename));
+        } catch (IOException e){
+            contents = new ArrayList();
+        }
     }
 
     public bos.Pair<Integer, Integer> getSheepLoc() {
@@ -31,13 +31,15 @@ public class SAWReader {
         return searchForPair("block");
     }
 
+
+
     private bos.Pair<Integer,Integer> searchForPair(String target){
         for (String s: contents){
             Pattern p = Pattern.compile(target + ":\\s*\\((\\d+),\\s*(\\d+)\\)");
             Matcher m = p.matcher(s);
             if(m.matches()){
                 return new bos.Pair( Integer.parseInt(m.group(1).trim())
-                                   , Integer.parseInt(m.group(2).trim()));
+                        , Integer.parseInt(m.group(2).trim()));
             }
         }
         return new bos.Pair(0,0);
