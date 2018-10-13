@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c49e73b7-4a17-47c7-8600-23ae9ef86647" name="Default Changelist" comment="MEMENTO WORKS PERFECT!&#10;block is aesthetically there but not working">
+    <list default="true" id="c49e73b7-4a17-47c7-8600-23ae9ef86647" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stage1.saw" beforeDir="false" afterPath="$PROJECT_DIR$/data/stage1.saw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/comp229-workshop/stage1.saw" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/comp229-workshop/stage1.saw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Behaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Behaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Caretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyObservable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyObservable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MOMENTO" beforeDir="false" afterPath="$PROJECT_DIR$/src/MOMENTO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Memento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Memento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MoveTowards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MoveTowards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SAWReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SAWReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shepherd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shepherd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StandStill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StandStill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/comp229-workshop/MOMENTO" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/comp229-workshop/MOMENTO" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,14 +49,14 @@
           <entry key="MOMENTO" value="2577" />
           <entry key="java" value="1817" />
           <entry key="saw" value="95" />
-          <entry key="txt" value="289" />
+          <entry key="txt" value="366" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1817" />
           <entry key="Markdown" value="2577" />
-          <entry key="PLAIN_TEXT" value="384" />
+          <entry key="PLAIN_TEXT" value="461" />
         </counts>
       </usages-collector>
     </session>
@@ -287,7 +266,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="ai&#9;PSI&#9;JAVA://Character#aiMove&#10;getwolf&#9;PSI&#9;JAVA://GameState#getWolfLocation&#10;startmove&#9;PSI&#9;JAVA://Player#startMove&#10;mover&#9;PSI&#9;JAVA://bos.RelativeMove#mover" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539422409474" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539423108749" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/comp229-workshttop" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -351,14 +330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539259196680</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Memento works and blocks are visible but dont work.&#10;finished product">
+      <created>1539422945599</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539422945600</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12713936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12713936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -367,14 +353,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49938875" visible="true" weight="0.3295964" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49938875" visible="true" weight="0.3295964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50061125" side_tool="true" weight="0.3295964" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295964" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3295964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -414,6 +400,32 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -421,7 +433,8 @@
     <MESSAGE value="edit 1. restore still doesnt work" />
     <MESSAGE value="edit 1. restore doesnt work but BLOCK almost works.&#10;block is located properly and has diagonal stripes but doesnt properly block movement" />
     <MESSAGE value="MEMENTO WORKS PERFECT!&#10;block is aesthetically there but not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="MEMENTO WORKS PERFECT!&#10;block is aesthetically there but not working" />
+    <MESSAGE value="Memento works and blocks are visible but dont work.&#10;finished product" />
+    <option name="LAST_COMMIT_MESSAGE" value="Memento works and blocks are visible but dont work.&#10;finished product" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/bos.jar!/bos/RelativeMove.class">

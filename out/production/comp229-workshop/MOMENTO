@@ -1,3 +1,4 @@
+Cameron Warton - 44635931
 The way i have used the Memento Design pattern in my project.
 
 Basically there are 3 main parts that have slightly different roles and they are known as the Memento, 
@@ -27,8 +28,8 @@ they were created.
 The memento class is the simplest. it literally just stores the saved article or location.
 
 -
-The memento design pattern wouldnt be a good solution for general game saves because if the game changes state in a way 
-which isnt compatible with the previous saved state then errors will arise. For example if the player wins the level and
-enters into a different level with a totally different grid or interface, the previously stored coordinants will not 
+The memento design pattern would not be a good solution for general game saves because if the game changes state in a way 
+which isn't compatible with the previous saved state then errors will arise. For example if the player wins the level and
+enters into a different level with a totally different grid or interface, the previously stored coordinates will not 
 be compatible with the current state of the game.
 
