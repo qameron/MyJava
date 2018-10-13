@@ -1,11 +1,9 @@
-
+// Cameron Warton - 44635931
 public class GameState {
 
     private Cell sheepLocation, playerLocation, wolfLocation, shephardLocation, blockLocation;
 
-    /**
-     *
-     */
+
     public GameState() {
         super();
     }

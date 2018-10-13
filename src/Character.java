@@ -1,3 +1,4 @@
+// Cameron Warton - 44635931
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Optional;
@@ -60,6 +61,7 @@ public abstract class Character implements GamePiece<Cell> {
     }
 
     public RelativeMove aiMove(Stage stage) {
+
         return behaviour.chooseMove(stage, this);
     }
 

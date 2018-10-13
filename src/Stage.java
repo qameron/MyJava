@@ -1,3 +1,4 @@
+// Cameron Warton - 44635931
 import java.awt.*;
 import java.util.*;
 import java.time.*;
@@ -13,7 +14,7 @@ public class Stage extends KeyObservable {
     protected Character wolf;
     private List<Character> allCharacters;
     protected Player player;
-    protected Block block;
+    protected static Block block;
 
     private Instant timeOfLastMove = Instant.now();
     private Originator originator;
